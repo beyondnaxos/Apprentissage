@@ -3,20 +3,50 @@
 using namespace std;
 
 class Book {
-
-public:
+private:
 	string Author;
-	string Title;
+	string Name;
 	int Year;
 	bool Disponible;
+	
+public:
+	
+	void getAuthor(string author) {
+		Author = author;
+	}
+	string getAuthor() {
+		return Author;
+	}
+	
+	void setName(string name) {
+		Name = name;
+	}
+	string getName() {
+		return Name;
+	}
+
+	void setYear(int year) {
+		Year = year;
+	}
+	int getYear() {
+		return Year;
+	}
+	
+	void setDispo(bool disponible) {
+		Disponible = disponible;
+	}
+	bool getDispo() {
+		return Disponible;
+	}
+	
 
 	void myBookIs() {
-		cout << "My book is " << Title << " by " << Author << " published in " << Year << endl;
+		cout << "My book is " << Name << " by " << Author << " published in " << Year << endl;
 	};
 
-	Book(string author, string title, int year, bool disponible) {
+	Book(string author, string name, int year, bool disponible) {
 		Author = author;
-		Title = title;
+		Name = name;
 		Year = year;
 		Disponible = disponible;
 	};
@@ -28,26 +58,14 @@ int main() {
 	
 	Book harry = Book("Jk Rowling", "Fary Potter", 2023, true);
 	Book indiana = Book("Jean Pierr", "Indiana Jones", 1986, false);
-	Book mock = Book("Harper Lee", "To Kill a Mockingbird", 1960, true);
-	Book gatsby = Book("F. Scott Fitzgerald", "The Great Gatsby", 1925, true);
-	Book rye = Book("J.D. Salinger", "The Catcher in the Rye", 1951, false);
-	Book orwell = Book("George Orwell", "1984", 1949, true);
-	Book men = Book("John Steinbeck", "Of Mice and Men", 1937, true);
-	
-	
+	harry.setName("harry Potter");
 
-		
 	
 	harry.myBookIs();
 	indiana.myBookIs();
-	mock.myBookIs();
-	gatsby.myBookIs();
-	rye.myBookIs();
-	orwell.myBookIs();
-	men.myBookIs();
 	
 
-	return 0;
+	//return 0;kc
 }
 
 
