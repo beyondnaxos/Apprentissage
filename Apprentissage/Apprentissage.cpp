@@ -2,21 +2,15 @@
 
 using namespace std;
 
-class Book {
+class Employee {
 private:
-	string Author;
 	string Name;
-	int Year;
-	bool Disponible;
+	string Company;
+	int Age;
+	bool Stupid;
+	
 	
 public:
-	
-	void getAuthor(string author) {
-		Author = author;
-	}
-	string getAuthor() {
-		return Author;
-	}
 	
 	void setName(string name) {
 		Name = name;
@@ -24,45 +18,56 @@ public:
 	string getName() {
 		return Name;
 	}
-
-	void setYear(int year) {
-		Year = year;
+	
+	void setCompany(string company) {
+		Company = company;
 	}
-	int getYear() {
-		return Year;
+	string getCompany() {
+		return Company;
+	}
+
+	void setAge(int age) {
+		if(age > 15)
+		Age = age;
+	}
+	int getAge() {
+		return Age;
+	}
+
+	void setStupid(bool stupid) {
+		Stupid = stupid;
+	}
+	bool getStupid() {
+		return Stupid;
 	}
 	
-	void setDispo(bool disponible) {
-		Disponible = disponible;
-	}
-	bool getDispo() {
-		return Disponible;
-	}
-	
-
-	void myBookIs() {
-		cout << "My book is " << Name << " by " << Author << " published in " << Year << endl;
+	void myEmployeeIs() {
+		cout << "i'm " << Name << ", I work at " << Company << " and i'm " << Age << " Years Old" <<endl;
 	};
 
-	Book(string author, string name, int year, bool disponible) {
-		Author = author;
+	Employee(string name, string company, int age, bool stupid) {
 		Name = name;
-		Year = year;
-		Disponible = disponible;
+		Company = company;
+		Age = age;	
+		Stupid = stupid;
 	};
 
 };
 
 int main() {
 
+	Employee employee1 = Employee("Robert Patou", "Google", 19, true);
+	Employee employee2 = Employee("Edward Joumla", "Free", 37, false);
+	Employee employee3 = Employee("Frule Berloule", "AOL", 51, true);
+	employee3.setName("Jimmy Mickael");
 	
-	Book harry = Book("Jk Rowling", "Fary Potter", 2023, true);
-	Book indiana = Book("Jean Pierr", "Indiana Jones", 1986, false);
-	harry.setName("harry Potter");
-
+	cout << employee1.getName() << " is an employee aged of " << employee1.getAge() << endl;
+	cout << employee2.getName() << " don't like " << employee2.getAge() << endl;
+		
+	employee1.myEmployeeIs();
+	employee2.myEmployeeIs();
+	employee3.myEmployeeIs();
 	
-	harry.myBookIs();
-	indiana.myBookIs();
 	
 
 	//return 0;kc
